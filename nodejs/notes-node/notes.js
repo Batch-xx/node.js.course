@@ -1,7 +1,26 @@
 /*jshint esversion: 6 */
 console.log('Starting note.js');
 
-module.exports.addNote = () => {
-    console.log('add note');
-    return 'new note';
+let addNote = (title, body) =>{
+    console.log('Adding note', title, body);
+};
+
+let getAll = () => {
+    console.log('Getting all notes');
+};
+
+let getNote = title => {
+    console.log(`Getting note: ${title}`);
+};
+
+let removeNote = title => { 
+    console.log(`Removing note: ${title}`);
+}
+
+
+module.exports = {
+    addNote,
+    getAll,
+    getNote,
+    removeNote
 };
