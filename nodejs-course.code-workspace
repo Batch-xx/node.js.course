@@ -4,5 +4,8 @@
 			"path": "nodejs"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"jslint.version": "es6",
+		"jslint.enable": false
+	}
 }
