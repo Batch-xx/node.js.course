@@ -17,18 +17,23 @@ console.log('Yargs', argv);
 
 let title = argv.title;
 
+
+
 if (command === "add"){
     let note = notes.addNote(argv.title, argv.body);
     if(note){
-        console.log("---Note created");
-        console.log(`   Title: ${note.title}`);
-        console.log(`   Body: ${note.body}`);
+        notes.logNote(note);
     }
     
 } else if (command === "list"){
     notes.getAll();
 } else if (command === "read"){
-    notes.getNote(title);
+    let note = notes.getNote(title);
+    if(note){
+        notes.logNote(note);
+    }else{
+        console.log(`${title} not found!!!`);
+    }
 } else if (command === "remove"){   
     let hasNoteRemove = notes.removeNote(title);
 
@@ -38,3 +43,4 @@ if (command === "add"){
 } else {
     console.log("Command not recognized");
 }
+
