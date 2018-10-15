@@ -23,7 +23,7 @@ let originalNote = {
 let originalNoteString = JSON.stringify(originalNote);
 fs.writeFileSync('notes.json', originalNoteString);
 
-let noteString = fs.readFileSync('notes.json');
+let noteString = fs.readFileSync('/t notes.json');
 
 
 console.log(typeof originalNote);
