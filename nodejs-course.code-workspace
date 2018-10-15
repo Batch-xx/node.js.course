@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"jslint.version": "es6",
-		"jslint.enable": false
+		"jslint.enable": false,
+		"files.autoSave": "onFocusChange"
 	}
 }
