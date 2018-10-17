@@ -1,7 +1,5 @@
 /*jshint esversion: 6 */ 
 
-console.log("Starting app");
-
 const fs = require("fs");
 const _ = require("lodash");
 const yargs = require('yargs');
@@ -11,8 +9,6 @@ const notes = require("./notes.js");
 
 const argv = yargs.argv;
 let command = process.argv[2];
-console.log("Command: ", command);
-console.log('Yargs', argv);
 
 
 let title = argv.title;
@@ -23,10 +19,13 @@ if (command === "add"){
     let note = notes.addNote(argv.title, argv.body);
     if(note){
         notes.logNote(note);
-    }
-    
+    }    
 } else if (command === "list"){
-    notes.getAll();
+    let allNotes = notes.getAll();
+    console.log(`Printing  ${allNotes.length} notes()`);
+    allNotes.forEach(note => {
+        notes.logNote(note);
+    });
 } else if (command === "read"){
     let note = notes.getNote(title);
     if(note){

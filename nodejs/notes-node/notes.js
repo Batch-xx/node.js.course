@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */ 
-console.log('Starting notes.js');
+
 const fs = require('fs');
 
 let fetchNotes = () => {
@@ -34,7 +34,7 @@ var addNote = (title, body) => {
 };
 
 let getAll = () => {
-    console.log('Getting all notes');
+    return fetchNotes();
 };
 
 let getNote = title => {
@@ -64,6 +64,7 @@ let removeNote = title => {
 };
 
 let logNote = (note) => {
+    debugger;
     console.log('---Note');
     console.log(`   title: ${note.title}`);
     console.log(`   body: ${note.body}`);
